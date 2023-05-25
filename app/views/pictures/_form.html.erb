@@ -1,0 +1,29 @@
+<%= form_with model: @pic do |form| %> 
+    <div>
+      <%= form.label :name %><br>
+      <%= form.text_field :name %>
+      <% @pic.errors.full_messages_for(:name).each do |message| %>
+        <%= message %>
+    <% end %>
+
+    </div>
+    
+    <div>   
+      <%= form.label :imageable_id %><br>
+      <%= form.collection_select :imageable_id, Employee.order(:name), :id, :name %>
+      <% @pic.errors.full_messages_for(:imageable_id).each do |message| %>
+        <%= message %>
+    <% end %>
+    <div>
+      <%= form.label :imageable_type %><br>
+      <%= form.collection_select :imageable_type, [Employee, Product], :name, :name %>
+      <% @pic.errors.full_messages_for(:imageable_type).each do |message| %>
+        <%= message %>
+    <% end %>
+    </div>
+    </div>
+    <div>
+      <%= form.submit %>
+    </div>
+  <% end %>
+  <%= link_to "Go Back", pictures_path %>

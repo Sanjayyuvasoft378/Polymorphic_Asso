@@ -1,0 +1,9 @@
+<h1>Pictures#show</h1>
+<ul>
+<li><%= @pic.name %></li><br></ul>
+<%= link_to "Edit", edit_picture_path %><br>
+<%= link_to "Destroy", picture_path(@pic), data:{
+    turbo_method: :delete,
+    turbo_confirm: "Are You Sure"
+} %><br>
+<%= link_to "Go Back", pictures_path %>

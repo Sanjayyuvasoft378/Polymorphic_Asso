@@ -1,0 +1,11 @@
+<h1>Products#index</h1>
+<ul>
+    <% @products.each do |product| %>
+        <li>
+            <%= link_to product.name, product %>
+        </li>
+    <% end %>
+</ul>
+<%= link_to "new product", new_product_path %><br>
+<%= link_to "Go To Employee Page", employees_path %><br>
+<%= link_to "Go To Pictures Page", pictures_path %>

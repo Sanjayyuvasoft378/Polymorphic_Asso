@@ -1,0 +1,14 @@
+<h1>Pictures#index</h1>
+
+<ul>
+    <% @pics.each do |pic| %>
+        <li>
+            <%= link_to pic.name,pic %>
+        </li>
+    <% end %>
+</ul>
+<%= link_to "Add New ", new_picture_path %> <Br>
+<%= link_to "Go To Product Page", products_path %>
+
+
+
